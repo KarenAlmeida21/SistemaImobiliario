@@ -1,6 +1,4 @@
-package listas_composicao27;
-
-import java.util.List;
+package Sistema_Imobiliario;
 
 public class Main {
     public static void main(String[] args) {
@@ -16,9 +14,10 @@ public class Main {
         //instanciando imovel
         Imovel imovel1 = new Imovel("Rua dois", 900);
         Imovel imovel2 = new Imovel("Rua oito", 1000);
+
         //instanciando funcionarios
-        Funcionario funcionario1 = new Funcionario();
-        Funcionario funcionario2 = new Funcionario();
+        Funcionario funcionario1 = new Funcionario("Hiago");
+        Funcionario funcionario2 = new Funcionario("Micael");
 
         //adicionando morador a imoveis
         imovel1.adicionar_morador(morador1);
@@ -32,8 +31,19 @@ public class Main {
         imovel2.adicionar_funcionario(funcionario1);
 
         //exibindo imoveis
-        System.out.println(imovel1.toString());
-        System.out.println(imovel2.toString());
+        System.out.println(imovel1);
+        System.out.println(imovel2);
+        //instanciando imobiliaria
+        Imobiliaria lar1 = new Imobiliaria();
+        Imobiliaria lar2 = new Imobiliaria();
+        //adicionando imoveis à imobiliaria
+        lar1.cadastrar_imovel(imovel1);
+        lar2.cadastrar_imovel(imovel2);
+
+        //exibindo imobiliaria
+        System.out.println(lar1);
+        System.out.println(lar2);
+
 
 
     }

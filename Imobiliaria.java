@@ -1,4 +1,4 @@
-package listas_composicao27;
+package Sistema_Imobiliario;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -19,5 +19,12 @@ public class Imobiliaria {
     public Imovel cadastrar_imovel(Imovel novo_imovel){
         this.listas_imoveis.add(novo_imovel);
         return novo_imovel;
+    }
+
+    @Override
+    public String toString() {
+        return "Imobiliaria: " +
+                "\t Listas de imovéis: " + listas_imoveis;
+
     }
 }
