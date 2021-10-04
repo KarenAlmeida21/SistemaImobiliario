@@ -10,13 +10,13 @@ public class Imobiliaria {
     }
 
     public List<Imovel> getListaImoveis() {
+
         return listaImoveis;
     }
 
-    public void setListas_imoveis(List<Imovel> listas_imoveis) {
-        this.listaImoveis = listas_imoveis;
-    }
-    public Imovel cadastrar_imovel(Imovel novoImovel){
+
+
+    public Imovel cadastrarImovel(Imovel novoImovel){
         this.listaImoveis.add(novoImovel);
         return novoImovel;
     }
@@ -24,7 +24,7 @@ public class Imobiliaria {
     @Override
     public String toString() {
         return "Imobiliaria: " +
-                "\t Listas de imovéis: " + listaImoveis;
+                "\n Listas de imovéis: " + listaImoveis;
 
     }
 

@@ -23,7 +23,6 @@ public class Morador {
 
     @Override
     public String toString() {
-        return nome;
+        return "\nMorador: " + nome;
     }
-
 }

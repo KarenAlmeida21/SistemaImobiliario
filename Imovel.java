@@ -45,19 +45,7 @@ public class Imovel {
     public List<Funcionario> getFuncionarioResponsavel() {
         return funcionarioResponsavel;
     }
-
-
-
-    @Override
-    public String toString() {
-        return "Imovel" +
-                "\t Endereco: " + endereco +
-                "\t Valor aluguel R$: " + valorAluguel +
-                "\t Lista de moradores: " + listaMoradores +
-                "\t Funcionario responsavel: " + funcionarioResponsavel;
-    }
-
-    public void adicionarMorador(Morador novoMorador) {
+    public void adicionarMorador(  Morador novoMorador) {
 
 
         listaMoradores.add(novoMorador);
@@ -65,12 +53,25 @@ public class Imovel {
 
     }
 
-
     public void adicionarFuncionario(Funcionario novoFuncionario) {
         getFuncionarioResponsavel().add(novoFuncionario);
 
 
     }
+
+
+
+
+    @Override
+    public String toString() {
+        return " \n Imovel" +
+                "\n Endereco: " + endereco +
+                "\n Valor aluguel R$: " + valorAluguel +
+                "\n Lista de moradores: " + listaMoradores +
+                "\n Funcionario responsavel: " + funcionarioResponsavel;
+    }
+
+
 
 }
 
