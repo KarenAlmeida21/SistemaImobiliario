@@ -1,4 +1,4 @@
-package Sistema_Imobiliario;
+package SistemaImobiliario;
 
 public class Main {
     public static void main(String[] args) {
@@ -27,8 +27,8 @@ public class Main {
         imovel2.adicionar_morador(morador4);
 
         //adicionando funcionario responsavel
-        imovel1.adicionar_funcionario(funcionario2);
-        imovel2.adicionar_funcionario(funcionario1);
+      //  imovel1.adicionar_funcionario(funcionario2);
+       // imovel2.adicionar_funcionario(funcionario1);
 
         //exibindo imoveis
         System.out.println(imovel1);

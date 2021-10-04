@@ -1,4 +1,4 @@
-package Sistema_Imobiliario;
+package SistemaImobiliario;
 
 public class Funcionario {
     private String nome;

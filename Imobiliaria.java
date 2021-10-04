@@ -1,4 +1,4 @@
-package Sistema_Imobiliario;
+package SistemaImobiliario;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -27,4 +27,5 @@ public class Imobiliaria {
                 "\t Listas de imovéis: " + listas_imoveis;
 
     }
-}
+
+    }

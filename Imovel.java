@@ -1,4 +1,4 @@
-package Sistema_Imobiliario;
+package SistemaImobiliario;
 
 
 import java.util.ArrayList;
@@ -48,9 +48,7 @@ public class Imovel {
         return funcionario_responsavel;
     }
 
-    public void setFuncionario_responsavel(List<Funcionario> funcionario_responsavel) {
-        this.funcionario_responsavel = funcionario_responsavel;
-    }
+
 
     @Override
     public String toString() {
@@ -63,8 +61,8 @@ public class Imovel {
 
     public void adicionar_morador(Morador novo_morador) {
 
-        Morador morador = novo_morador;
-        lista_moradores.add(morador);
+
+        lista_moradores.add(novo_morador);
 
 
     }
