@@ -4,27 +4,27 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Imobiliaria {
-    public List <Imovel> listas_imoveis = new ArrayList<>();
+    public List <Imovel> listaImoveis = new ArrayList<>();
 
     public Imobiliaria() {
     }
 
-    public List<Imovel> getListas_imoveis() {
-        return listas_imoveis;
+    public List<Imovel> getListaImoveis() {
+        return listaImoveis;
     }
 
     public void setListas_imoveis(List<Imovel> listas_imoveis) {
-        this.listas_imoveis = listas_imoveis;
+        this.listaImoveis = listas_imoveis;
     }
-    public Imovel cadastrar_imovel(Imovel novo_imovel){
-        this.listas_imoveis.add(novo_imovel);
-        return novo_imovel;
+    public Imovel cadastrar_imovel(Imovel novoImovel){
+        this.listaImoveis.add(novoImovel);
+        return novoImovel;
     }
 
     @Override
     public String toString() {
         return "Imobiliaria: " +
-                "\t Listas de imovéis: " + listas_imoveis;
+                "\t Listas de imovéis: " + listaImoveis;
 
     }
 

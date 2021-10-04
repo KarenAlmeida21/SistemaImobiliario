@@ -20,11 +20,11 @@ public class Main {
         Funcionario funcionario2 = new Funcionario("Micael");
 
         //adicionando morador a imoveis
-        imovel1.adicionar_morador(morador1);
-        imovel1.adicionar_morador(morador3);
+        imovel1.adicionarMorador(morador1);
+        imovel1.adicionarMorador(morador3);
 
-        imovel2.adicionar_morador(morador2);
-        imovel2.adicionar_morador(morador4);
+        imovel2.adicionarMorador(morador2);
+        imovel2.adicionarMorador(morador4);
 
         //adicionando funcionario responsavel
       //  imovel1.adicionar_funcionario(funcionario2);

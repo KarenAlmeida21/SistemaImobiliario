@@ -6,18 +6,16 @@ import java.util.List;
 
 public class Imovel {
     private String endereco;
-    private double valor_aluguel;
-    public List<Morador> lista_moradores = new ArrayList<>();
-    public List<Funcionario> funcionario_responsavel = new ArrayList<>();
+    private double valorAluguel;
+    public List<Morador> listaMoradores = new ArrayList<>();
+    public List<Funcionario> funcionarioResponsavel = new ArrayList<>();
 
     public Imovel() {
     }
 
-    public Imovel(String endereco, double valor_aluguel) {
+    public Imovel(String endereco, double valorAluguel) {
         this.endereco = endereco;
-        this.valor_aluguel = valor_aluguel;
-
-
+        this.valorAluguel = valorAluguel;
     }
 
     public String getEndereco() {
@@ -28,24 +26,24 @@ public class Imovel {
         this.endereco = endereco;
     }
 
-    public double getValor_aluguel() {
-        return valor_aluguel;
+    public double getValorAluguel() {
+        return valorAluguel;
     }
 
-    public void setValor_aluguel(double valor_aluguel) {
-        this.valor_aluguel = valor_aluguel;
+    public void setValorAluguel(double valorAluguel) {
+        this.valorAluguel = valorAluguel;
     }
 
-    public List<Morador> getLista_moradores() {
-        return lista_moradores;
+    public List<Morador> getListaMoradores() {
+        return listaMoradores;
     }
 
-    public void setLista_moradores(List<Morador> lista_moradores) {
-        this.lista_moradores = lista_moradores;
+    public void setListaMoradores(List<Morador> listaMoradores) {
+        this.listaMoradores = listaMoradores;
     }
 
-    public List<Funcionario> getFuncionario_responsavel() {
-        return funcionario_responsavel;
+    public List<Funcionario> getFuncionarioResponsavel() {
+        return funcionarioResponsavel;
     }
 
 
@@ -54,22 +52,22 @@ public class Imovel {
     public String toString() {
         return "Imovel" +
                 "\t Endereco: " + endereco +
-                "\t Valor aluguel R$: " + valor_aluguel +
-                "\t Lista de moradores: " + lista_moradores +
-                "\t Funcionario responsavel: " + funcionario_responsavel;
+                "\t Valor aluguel R$: " + valorAluguel +
+                "\t Lista de moradores: " + listaMoradores +
+                "\t Funcionario responsavel: " + funcionarioResponsavel;
     }
 
-    public void adicionar_morador(Morador novo_morador) {
+    public void adicionarMorador(Morador novoMorador) {
 
 
-        lista_moradores.add(novo_morador);
+        listaMoradores.add(novoMorador);
 
 
     }
 
 
-    public void adicionar_funcionario(Funcionario novo_funcionario) {
-        funcionario_responsavel.add(novo_funcionario);
+    public void adicionarFuncionario(Funcionario novoFuncionario) {
+        getFuncionarioResponsavel().add(novoFuncionario);
 
 
     }

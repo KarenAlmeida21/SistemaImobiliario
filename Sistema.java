@@ -8,5 +8,19 @@ package SistemaImobiliario;
 //Entrega média:
 //O sistema permite adicionar mais de um imóvel e exibir a lista de imóveis.
 
+import java.util.Scanner;
+
 public class Sistema {
+    public static void menu(){
+        System.out.println("1 para cadastrar morador");
+        System.out.println("2 para cadastrar funcionário responsável");
+        System.out.println("3 para cadastrar imóvel");
+    }
+
+
+    private static Scanner obterDados(String mensagem) {
+        System.out.println(mensagem);
+        return new Scanner(System.in);
+    }
+
 }
