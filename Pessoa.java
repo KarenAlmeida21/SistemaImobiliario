@@ -1,12 +1,15 @@
 package SistemaImobiliario;
 
+public abstract class Pessoa {
+        private String nome;
+        private String cpf;
 
+    public Pessoa() {
+    }
 
-public class Morador {
-  String nome;
-  String cpf;
-
-    public Morador() {
+    public Pessoa(String nome, String cpf) {
+        this.nome = nome;
+        this.cpf = cpf;
     }
 
     public String getNome() {
@@ -27,7 +30,9 @@ public class Morador {
 
     @Override
     public String toString() {
-        return "\nMorador:" + nome +
-                "\nCPF:" + cpf;
+        return "Pessoa: " +
+                "Nome:\n " + nome +
+                "CPF:\n " + cpf;
     }
 }
+

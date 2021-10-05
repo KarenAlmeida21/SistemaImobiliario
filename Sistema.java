@@ -4,12 +4,15 @@ package SistemaImobiliario;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
+//O sistema deve permitir excluir um morador de um imóvel específico utilizando o endereço do imóvel e o CPF do morador.
+// E também, o sistema não pode permitir adicionar um morador com CPF repetido.
 
 public class Sistema {
     public static void menu() {
         System.out.println("1 para cadastrar imóvel");
         System.out.println("2 para exibir o cadastro ");
-        System.out.println("3 para sair do menu");
+        System.out.println("3 excluir morador");
+        System.out.println("4 para sair do menu");
     }
 
 
@@ -28,7 +31,10 @@ public class Sistema {
 
     public static Morador novoMorador() {
         String nome = obterDados("Digite o nome do morador: ").nextLine();
-        Morador morador = new Morador(nome);
+        String cpf =obterDados("Digite o cpf do morador: ").nextLine();
+
+        Morador morador = new Morador();
+        morador.setCpf(cpf);
         morador.setNome(nome);
         return morador;
 
@@ -39,8 +45,10 @@ public class Sistema {
 
     public static Funcionario novoFuncionario() {
         String nome = obterDados("Digite o nome do funcionário Responsável: ").nextLine();
-        Funcionario novoFuncionario = new Funcionario(nome);
+        String cpf =obterDados("Digite o cpf do funcionario: ").nextLine();
+        Funcionario novoFuncionario = new Funcionario();
         novoFuncionario.setNome(nome);
+        novoFuncionario.setCpf(cpf);
         return novoFuncionario;
     }
 
@@ -71,9 +79,11 @@ public class Sistema {
                 System.out.println(imobiliaria);
             }
             if (opcaoMenu==3){
+
+
+            }else if(opcaoMenu==4){
                 encerrarMenu();
                 menu=false;
-
             }
 
         }

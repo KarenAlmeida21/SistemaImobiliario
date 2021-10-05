@@ -21,10 +21,12 @@ public class Imobiliaria {
         return novoImovel;
     }
 
+
     @Override
     public String toString() {
         return "Imobiliaria: " +
-                "\n Listas de imovéis: " + listaImoveis;
+                "\n Listas de imovéis: "
+                + listaImoveis;
 
     }
 
