@@ -20,7 +20,7 @@ public class Sistema {
         return new Scanner(System.in);
     }
 
-    //método para receber novo morador
+    //método para receber novo imovel
     public static Imovel novoImovel() {
 
         String endereço = obterDados("Digite o endereço do imóvel: ").nextLine();
@@ -35,11 +35,13 @@ public class Sistema {
         String cpf = obterDados("Digite o cpf do morador: ").nextLine();
 
         Morador morador = new Morador();
-        morador.setCpf(cpf);
         morador.setNome(nome);
-        return morador;
+        morador.setCpf(cpf);
 
+        return morador;
     }
+
+
 
     //método informação de encerrar menu
     public static void encerrarMenu() {
@@ -74,7 +76,7 @@ public class Sistema {
         for (Imovel percorrerListaImoveis : imobiliaria.getListaImoveis()) {
             //foreach para acessar a lista de moradores, que está dentro de imoveis
             for (Morador percorrerListaMoradores : percorrerListaImoveis.getListaMoradores()) {
-//condicional se o cpf recebido for existente na lista de moradores exclua.
+//condicional: se o cpf recebido for existente na lista de moradores exclua.
                 if (cpf.equals(percorrerListaMoradores.getCpf())) {
                     percorrerListaImoveis.getListaMoradores().remove(percorrerListaMoradores);
                     System.out.println("Morador Removido Com Sucesso");
@@ -96,6 +98,7 @@ public class Sistema {
         novoFuncionario.setCpf(cpf);
         return novoFuncionario;
     }
+
 
     public static void executar() {
         boolean menu = true;
