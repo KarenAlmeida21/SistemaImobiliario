@@ -28,5 +28,6 @@ public class Funcionario {
         return "Funcionario:" +
                 "\nNome:" + nome +
                 "\n CPF:"+ cpf;
+
     }
 }
