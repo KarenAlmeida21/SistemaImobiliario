@@ -17,7 +17,7 @@ public class Morador {
         this.nome = nome;
     }
 
-    public String getCpf() {
+    public String getCpf(String cpfRemovido) {
         return cpf;
     }
 
@@ -29,5 +29,9 @@ public class Morador {
     public String toString() {
         return "\nMorador:" + nome +
                 "\nCPF:" + cpf;
+    }
+
+    public String getCpf() {
+        return cpf;
     }
 }
