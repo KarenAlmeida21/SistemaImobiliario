@@ -17,9 +17,7 @@ public class Morador {
         this.nome = nome;
     }
 
-    public String getCpf(String cpfRemovido) {
-        return cpf;
-    }
+
 
     public void setCpf(String cpf) {
         this.cpf = cpf;

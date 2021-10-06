@@ -57,6 +57,7 @@ public class Sistema {
             for (Morador percorrerListaMoradores : percorrerListaImoveis.getListaMoradores()) {
 
                 if (percorrerListaMoradores.getCpf().equals(cpf)) {
+                    System.out.println("cpf já existente no cadastro");
                     return true;
                 }
 
@@ -74,7 +75,7 @@ public class Sistema {
             //foreach para acessar a lista de moradores, que está dentro de imoveis
             for (Morador percorrerListaMoradores : percorrerListaImoveis.getListaMoradores()) {
 //condicional se o cpf recebido for existente na lista de moradores exclua.
-                if (cpf.equals(percorrerListaMoradores.getCpf(cpf))) {
+                if (cpf.equals(percorrerListaMoradores.getCpf())) {
                     percorrerListaImoveis.getListaMoradores().remove(percorrerListaMoradores);
                     System.out.println("Morador Removido Com Sucesso");
                     return "Morador removido";
