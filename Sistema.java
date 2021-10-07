@@ -1,6 +1,8 @@
 package SistemaImobiliario;
 
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 // E também, o sistema não pode permitir adicionar um morador com CPF repetido.
@@ -30,17 +32,21 @@ public class Sistema {
     }
 
     //método para criar um novo morador
-    public static Morador novoMorador() {
-        String nome = obterDados("Digite o nome do morador: ").nextLine();
-        String cpf = obterDados("Digite o cpf do morador: ").nextLine();
+    public static Morador novoMorador(Imobiliaria imobiliaria, Imovel imovel) {
 
-        Morador morador = new Morador();
-        morador.setNome(nome);
-        morador.setCpf(cpf);
+            String nome = obterDados("Digite o nome do morador: ").nextLine();
+            String cpf = obterDados("Digite o cpf do morador: ").nextLine();
+            Morador morador = new Morador(nome, cpf);
+            if (validarCpf(imobiliaria, morador )) {
+                System.out.println("CPF já cadastrado");
+            } else if (!validarCpf(imobiliaria, morador)){
+
+                imovel.adicionarMorador(morador);
+            }
+
 
         return morador;
     }
-
 
 
     //método informação de encerrar menu
@@ -49,17 +55,18 @@ public class Sistema {
     }
 
 
-    //um foreah dentro do outro;
+    //
     //  metodo para validar cpf
-    public static boolean validarCpf(Imobiliaria imobiliaria, Morador morador) {
+    public static boolean validarCpf(Imobiliaria imobiliaria, Morador morador ) {
         //crio uma variavel que puxa o cpf do morador
         String cpf = morador.getCpf();
+       // um foreah dentro do outro;
         for (Imovel percorrerListaImoveis : imobiliaria.getListaImoveis()) {
             //percorrer lista de moradores com um foreach
             for (Morador percorrerListaMoradores : percorrerListaImoveis.getListaMoradores()) {
 
                 if (percorrerListaMoradores.getCpf().equals(cpf)) {
-                    System.out.println("cpf já existente no cadastro");
+
                     return true;
                 }
 
@@ -68,6 +75,7 @@ public class Sistema {
         }
         return false;
     }
+
     //método remover morador
     public static String removerMorador(Imobiliaria imobiliaria) {
         //recebendo o cpf a ser removido
@@ -80,12 +88,12 @@ public class Sistema {
                 if (cpf.equals(percorrerListaMoradores.getCpf())) {
                     percorrerListaImoveis.getListaMoradores().remove(percorrerListaMoradores);
                     System.out.println("Morador Removido Com Sucesso");
-                    return "Morador removido";
+
                 }
             }
         }
         System.out.println("Morador não encontrado no cadastro.");
-        return "Morador Não Cadastrado";
+        return "Morador não encontrado no cadastro";
     }
 
 
@@ -100,6 +108,9 @@ public class Sistema {
     }
 
 
+
+
+
     public static void executar() {
         boolean menu = true;
         menu();
@@ -108,18 +119,24 @@ public class Sistema {
             int opcaoMenu = obterDados("Digite sua opção do menu: ").nextInt();
             if (opcaoMenu == 1) {
                 Imovel imovel = novoImovel();
-                imobiliaria.cadastrarImovel(imovel);
+
 
                 String confirmacaoMorador = obterDados("Deseja adicionar novo morador?").nextLine();
                 if (confirmacaoMorador.equalsIgnoreCase("sim")) {
-                    int qtdeMoradoes = obterDados("Quantos moradoes? ").nextInt();
-                    for (int contador = 0; contador < qtdeMoradoes; contador++) {
-                        imovel.adicionarMorador(novoMorador());
-                        System.out.println("Morador Adicionado\n");
+                    int qtdeMoradores = obterDados("Quantos moradores?").nextInt();
+                    //variavel contadora
+                    int contador = 0;
+                    while (contador < qtdeMoradores) {
+                       // imovel.adicionarMorador(novoMorador());
+                        Morador morador = novoMorador(imobiliaria, imovel);
+                        imobiliaria.cadastrarImovel(imovel);
+                        contador++;
                     }
+                    System.out.println("Morador Adicionado");
                 }
                 String confirmacaoFuncionario = obterDados("Deseja adicionar funcionario responsável?").nextLine();
                 if (confirmacaoFuncionario.equalsIgnoreCase("sim")) {
+                    //adiciono funcionario
                     imovel.adicionarFuncionario(novoFuncionario());
                     System.out.println("Funcionário Cadastrado\n");
                 }
@@ -128,6 +145,7 @@ public class Sistema {
                 System.out.println(imobiliaria);
             }
             if (opcaoMenu == 3) {
+
                 removerMorador(imobiliaria);
             } else if (opcaoMenu == 4) {
                 encerrarMenu();

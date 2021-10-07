@@ -9,6 +9,11 @@ public class Morador {
     public Morador() {
     }
 
+    public Morador(String nome, String cpf) {
+        this.nome = nome;
+        this.cpf = cpf;
+    }
+
     public String getNome() {
         return nome;
     }
