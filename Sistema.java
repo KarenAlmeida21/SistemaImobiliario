@@ -41,7 +41,7 @@ public class Sistema {
                 System.out.println("CPF já cadastrado");
             } else if (!validarCpf(imobiliaria, morador)){
 
-                imovel.adicionarMorador(morador);
+               imovel.adicionarMorador(morador);
             }
 
 
@@ -74,6 +74,13 @@ public class Sistema {
 
         }
         return false;
+    }
+    public static Imobiliaria  exibirLista(Imobiliaria imobiliaria){
+        for (Imovel percorrerListaImoveis:imobiliaria.getListaImoveis()) {
+
+
+        }
+        return imobiliaria;
     }
 
     //método remover morador
@@ -125,13 +132,10 @@ public class Sistema {
                 if (confirmacaoMorador.equalsIgnoreCase("sim")) {
                     int qtdeMoradores = obterDados("Quantos moradores?").nextInt();
                     //variavel contadora
-                    int contador = 0;
-                    while (contador < qtdeMoradores) {
-                       // imovel.adicionarMorador(novoMorador());
+
+                    for (int x=0; x < qtdeMoradores; x++){
                         Morador morador = novoMorador(imobiliaria, imovel);
-                        imobiliaria.cadastrarImovel(imovel);
-                        contador++;
-                    }
+                       imobiliaria.cadastrarImovel(imovel);}
                     System.out.println("Morador Adicionado");
                 }
                 String confirmacaoFuncionario = obterDados("Deseja adicionar funcionario responsável?").nextLine();
@@ -145,8 +149,8 @@ public class Sistema {
                 System.out.println(imobiliaria);
             }
             if (opcaoMenu == 3) {
-
-                removerMorador(imobiliaria);
+exibirLista(imobiliaria);
+               // removerMorador(imobiliaria);
             } else if (opcaoMenu == 4) {
                 encerrarMenu();
                 menu = false;
